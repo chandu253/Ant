@@ -1,43 +1,46 @@
 <?xml version="1.0"?>
-<project name="junit test" basedir="./final" default="run">
+<project name="junit test" basedir="." default="run">
 
 	<target name="cleanup">
-		<delete dir="build" />
-		<delete dir="build/classes" />
-		<delete dir="src" />
-		<delete dir="test" />
-		<delete dir="lib" />
-		<delete dir="testResults" />
+		
+		<delete dir="final\build" />
+		<delete dir="final\build/classes" />
+		<delete dir="final\src" />
+		<delete dir="final\test" />
+		<delete dir="final\lib" />
+		<delete dir="final\testResults"/>
+		<delete dir="final"/>
 	</target>
 	<target name="create" depends="cleanup">
-		<mkdir dir="build" />
-		<mkdir dir="build/classes" />
-		<mkdir dir="src" />
-		<mkdir dir="test" />
-		<mkdir dir="testResults" />
-		<mkdir dir="lib" />
+		<mkdir dir="final"/>
+		<mkdir dir="final\build" />
+		<mkdir dir="final\build/classes" />
+		<mkdir dir="final\src" />
+		<mkdir dir="final\test" />
+		<mkdir dir="final\testResults" />
+		<mkdir dir="final\lib" />
 	</target>
 	<target name="copy" depends="create">
-		<copy overwrite="true" todir="lib">
-			<fileset dir="D:\workspaces\jee\Ameritas\WebContent\WEB-INF\lib" includes="*.jar">
+		<copy overwrite="true" todir="final\lib">
+			<fileset dir="WebContent\WEB-INF\lib" includes="*.jar">
 			</fileset>
 		</copy>
-		<copy overwrite="true" todir="src">
-			<fileset dir="D:\workspaces\jee\Ameritas\src\com\ebix\customer" includes="*.java">
+		<copy overwrite="true" todir="final\src">
+			<fileset dir="src\com\ebix\customer" includes="*.java">
 			</fileset>
-			<fileset dir="D:\workspaces\jee\Ameritas\src\com\ebix\customer\test" includes="*.java">
+			<fileset dir="src\com\ebix\customer\test" includes="*.java">
 			</fileset>
 		</copy>
 	</target>
 	<path id="classpath">
-		<path location="lib">
-			<fileset dir="lib" includes="*.jar">
+		<path location="final\lib">
+			<fileset dir="final\lib" includes="*.jar">
 			</fileset>
 		</path>
-		<path location="build/classes"></path>
+		<path location="final\build/classes"></path>
 	</path>
 	<target name="compile" depends="copy">
-		<javac srcdir="src" destdir="build/classes" includeantruntime="true" classpathref="classpath">
+		<javac srcdir="final/src" destdir="final/build/classes" includeantruntime="true" classpathref="classpath">
 		</javac>
 	</target>
 
@@ -45,7 +48,7 @@
 	
 		<junit haltonfailure="false" printsummary="true" >
 			<classpath refid="classpath"></classpath>
-			<test name="com.ebix.customer.test.CustomerTest" todir="testResults" ></test>
+			<test name="com.ebix.customer.test.CustomerTest" todir="final/testResults" ></test>
 			<formatter type="plain"/>
 		</junit>
 	</target>
