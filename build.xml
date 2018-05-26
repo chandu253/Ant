@@ -8,6 +8,7 @@
 		<delete dir="test" />
 		<delete dir="lib" />
 		<delete dir="testResults" />
+		<delete dir="final" />
 	</target>
 	<target name="create" depends="cleanup">
 		<mkdir dir="build" />
@@ -16,6 +17,7 @@
 		<mkdir dir="test" />
 		<mkdir dir="testResults" />
 		<mkdir dir="lib" />
+		<mkdir dir="final" />
 	</target>
 	<target name="copy" depends="create">
 		<copy overwrite="true" todir="lib">
