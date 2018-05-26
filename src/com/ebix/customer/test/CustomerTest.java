@@ -13,7 +13,7 @@ public class CustomerTest {
 	@Test
 	public void getCustNameTest(){
 		Customer cust=new Customer();
-		cust.setCustName("billa");
+		cust.setCustName("bill");
 		
 		String expected="billa";
 		String actual=cust.getCustName();
