@@ -53,6 +53,7 @@
 			<classpath refid="classpath"></classpath>
 			<test name="com.ebix.customer.test.CustomerTest" todir="final/testResults" ></test>
 			<formatter type="xml"/>
+			<formatter type="text"/>
 		</junit>
 	</target>
 </project>
