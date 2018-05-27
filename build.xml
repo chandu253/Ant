@@ -13,6 +13,7 @@
 		<delete dir="final\src" />
 		<delete dir="final\test" />
 		<delete dir="final\lib" />
+		<delete dir="final\html"/>
 		<delete dir="final"/>
 	</target>
 	<target name="create" depends="cleanup">
@@ -21,6 +22,7 @@
 		<mkdir dir="final\build/classes" />
 		<mkdir dir="final\src" />
 		<mkdir dir="final\test" />
+		<mkdir dir="final\html"/>
 		<mkdir dir="final\lib" />
 	</target>
 	<target name="copy" depends="create">
@@ -33,6 +35,10 @@
 			</fileset>
 			<fileset dir="src\com\ebix\customer\test" includes="*.java">
 			</fileset>
+		</copy>
+		<copy overwrite="true" todir="final\html">
+					<fileset dir="WebContent" includes="*.html">
+					</fileset>
 		</copy>
 	</target>
 	<path id="classpath">
@@ -59,6 +65,7 @@
 	<target name="war" depends="run">
 		<war destfile="final/ameritas.war" needxmlfile='false'> 
 		  <lib dir="final/lib"/>
+			<fileset dir="final/html"/>
 		  <classes dir="final/build/classes"/>
 		</war>
 	</target>
