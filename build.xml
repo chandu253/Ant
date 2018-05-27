@@ -60,7 +60,7 @@
 	<target name="war" depends="run">
 		<war destfile="final/ameritas.war" needxmlfile='false'> 
 		  <lib dir="final/lib"/>
-		  <classes dir="build/classes"/>
+		  <classes dir="final/build/classes"/>
 		</war>
 	</target>
 	
