@@ -21,7 +21,6 @@
 		<mkdir dir="final\build/classes" />
 		<mkdir dir="final\src" />
 		<mkdir dir="final\test" />
-		<mkdir dir="testResults" />
 		<mkdir dir="final\lib" />
 	</target>
 	<target name="copy" depends="create">
