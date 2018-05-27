@@ -13,7 +13,6 @@
 		<delete dir="final\src" />
 		<delete dir="final\test" />
 		<delete dir="final\lib" />
-		<delete dir="final\testResults"/>
 		<delete dir="final"/>
 	</target>
 	<target name="create" depends="cleanup">
