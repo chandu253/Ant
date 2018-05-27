@@ -21,7 +21,7 @@
 		<mkdir dir="final\build/classes" />
 		<mkdir dir="final\src" />
 		<mkdir dir="final\test" />
-		<mkdir dir="final\testResults" />
+		<mkdir dir="testResults" />
 		<mkdir dir="final\lib" />
 	</target>
 	<target name="copy" depends="create">
@@ -52,7 +52,7 @@
 	
 		<junit haltonfailure="false" printsummary="true" >
 			<classpath refid="classpath"></classpath>
-			<test name="com.ebix.customer.test.CustomerTest" todir="final/testResults" ></test>
+			<test name="com.ebix.customer.test.CustomerTest" todir="testResults" ></test>
 			<formatter type="xml"/>
 		</junit>
 	</target>
