@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
 <project name="junit test" basedir="." default="run">
 
-	<target name="cleanup">
-		
+
+
+	<target name="print">
+	<echo>Hello Ant!</echo>
+  	</target>
+
+	<target name="cleanup" depends="print">	
 		<delete dir="final\build" />
 		<delete dir="final\build/classes" />
 		<delete dir="final\src" />
@@ -49,7 +54,7 @@
 		<junit haltonfailure="false" printsummary="true" >
 			<classpath refid="classpath"></classpath>
 			<test name="com.ebix.customer.test.CustomerTest" todir="final/testResults" ></test>
-			<formatter type="plain"/>
+			<formatter type="xml"/>
 		</junit>
 	</target>
 </project>
